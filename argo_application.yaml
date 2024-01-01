@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-test-application
+spec:
+  destination:
+    name: ''
+    namespace: for-argo
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: deployment
+    repoURL: 'https://github.com/OpsEng1/Argocd_K8s_Test.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+project: default
+source:
+  repoURL: 'https://github.com/OpsEng1/Argocd_K8s_Test.git'
+  path: deployment
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: for-argo
+syncPolicy:
+  automated:
+    selfHeal: true
