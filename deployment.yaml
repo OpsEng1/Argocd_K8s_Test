@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-nginx-deployment
+  name: my-nginx-deployment
+  namespace: for-argo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-nginx-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-nginx-deployment
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
