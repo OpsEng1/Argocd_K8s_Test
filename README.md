@@ -1,4 +1,4 @@
-# Testing a Kubernetes Deployment on ArgoCD
+# Testing SelfHeal on a Kubernetes Deployment using ArgoCD
 
 This is a simple repo to test the Kubernetes repo section on ArgoCD
 
